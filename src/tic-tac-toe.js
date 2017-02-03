@@ -24,10 +24,12 @@ class TicTacToe {
                 this.currentPlayer = 'x';
             }
         }
+
     }
 
     //should return true if game is finished (e.g. there is a winner or it is a draw)
     isFinished() {
+
     }
 
     //should return winner symbol (x or o) or null if there is no winner yet
@@ -37,11 +39,21 @@ class TicTacToe {
 
     //should return true if there is no more fields to place a x or o
     noMoreTurns() {
+        let freePlace = 9;
 
+        for(let i=0; i<3; i++){
+            for(let j=0; j<3; j++){
+                if (this.playField[i][j] != null){
+                    freePlace--;
+                }
+            }
+        }
+        return freePlace == 0;
     }
 
     //should return true if there is no more turns and no winner
     isDraw() {
+
     }
 
     //should return matrix[row][col] value (if any) or null
